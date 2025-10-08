@@ -1,0 +1,41 @@
+﻿@model EmployeeViewModel
+@if (Model.ImageName is not null)
+{
+	<div class="form-group">
+		<img src="~/Files/Images/@Model.ImageName" class="rounded" height="100" width="100" />
+		<input asp-for="ImageName" hidden />
+	</div>
+}
+
+<div class="form-group">
+	<label asp-for="@Model.Name" class="col-form-lable"></label>
+	<input readonly asp-for="@Model.Name" class="form-control" />
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Age" class="col-form-lable"></label>
+	<input readonly asp-for="@Model.Age" class="form-control" />
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Salary" class="col-form-lable"></label>
+	<input readonly asp-for="@Model.Salary" class="form-control" />
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Address" class="col-form-lable"></label>
+	<input readonly asp-for="@Model.Address" class="form-control" />
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Email" class="col-form-lable"></label>
+	<input readonly asp-for="@Model.Email" class="form-control" />
+</div>
+<div class="form-group">
+	<label asp-for="@Model.PhonwNumber" class="col-form-lable"></label>
+	<input readonly asp-for="@Model.PhonwNumber" class="form-control" />
+</div>
+<div class="form-group">
+	<label asp-for="@Model.HireDate" class="col-form-lable"></label>
+	<input readonly asp-for="@Model.HireDate" class="form-control" />
+</div>
+<div class="form-group">
+	<label asp-for="@Model.IsActive" class="col-form-lable"></label>
+	<input readonly asp-for="@Model.IsActive" class="form-check-input" />
+</div>

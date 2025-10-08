@@ -1,0 +1,59 @@
+﻿@model EmployeeViewModel
+@{
+	var departments = new SelectList(@ViewBag.Departments,"Id","Name");
+}
+
+<div class="form-group">
+	<label asp-for="@Model.Name" class="col-form-lable"></label>
+	<input asp-for="@Model.Name" class="form-control" />
+	<span asp-validation-for="@Model.Name" class="text-danger"></span>
+</div>
+
+
+<div class="form-group">
+	<label  class="col-form-lable" asp-for="Image"></label>
+	<input  class="form-control" asp-for="Image"  />
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Age" class="col-form-lable"></label>
+	<input asp-for="@Model.Age" class="form-control" />
+	<span asp-validation-for="@Model.Age" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Salary" class="col-form-lable"></label>
+	<input asp-for="@Model.Salary" class="form-control" />
+	<span asp-validation-for="@Model.Salary" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+	<label asp-for="@Model.Department" class="col-form-lable"></label>
+	<select asp-items="departments" asp-for="DepartmentId" class="form-control">
+		<option value="@null">----- Select Department ------</option>
+	</select>
+	
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Address" class="col-form-lable"></label>
+	<input asp-for="@Model.Address" class="form-control" />
+	<span asp-validation-for="@Model.Address" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Email" class="col-form-lable"></label>
+	<input asp-for="@Model.Email" class="form-control" />
+	<span asp-validation-for="@Model.Email" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.PhonwNumber" class="col-form-lable"></label>
+	<input asp-for="@Model.PhonwNumber" class="form-control" />
+	<span asp-validation-for="@Model.PhonwNumber" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.HireDate" class="col-form-lable"></label>
+	<input asp-for="@Model.HireDate" class="form-control" />
+	<span asp-validation-for="@Model.HireDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.IsActive" class="col-form-lable"></label>
+	<input asp-for="@Model.IsActive" class="form-check-input" />
+	<span asp-validation-for="@Model.IsActive" class="text-danger"></span>
+</div>

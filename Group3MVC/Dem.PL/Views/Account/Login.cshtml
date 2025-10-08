@@ -1,0 +1,87 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+<style>
+    .google-btn {
+        background-color: #ffffff;
+        color: #444;
+        border: 1px solid #ddd;
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+        .google-btn:hover {
+            background-color: #f7f7f7;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .google-btn i {
+            color: #db4437; 
+            font-size: 18px;
+        }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+@* <div class="error"> *@
+@* 	@if (ViewData.ModelState.ErrorCount > 0) *@
+@* 	{ *@
+@* 		<ul> *@
+@* 			@foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors)) *@
+@* 			{ *@
+@* 				<li>@error.ErrorMessage</li> *@
+@* 			} *@
+@* 		</ul> *@
+@* 	} *@
+@* </div> *@
+<div asp-validation-summary="All" class="error"></div>
+<div class="main-agileinfo">
+	<div class="agileits-top">
+		<form asp-action="Login">
+			<input class="text" asp-for="Email" placeholder="Email" required="">
+			<span asp-validation-for="Email" class="text-danger"></span>
+			<br />
+			<input class="text" asp-for="Password" placeholder="Enter Your Password" required="">
+			<span asp-validation-for="Password" class="text-danger"></span>
+			<br />
+			<div class="wthree-text">
+				<label class="anim">
+					<input asp-for="RememberMe" class="checkbox" required="">
+					<span>Remember Me </span>
+				</label>
+				<div class="clear"> </div>
+			</div>
+			<input type="submit" value="SIGNIN">
+		</form>
+		<p>Don't have an Account? <a asp-action="Register" asp-controller="Account"> SIGIN UP Now!</a></p>
+        <br />
+		<div class="text-center">
+			<form asp-action="ExternalLogin" asp-controller="Account" method="post" class="d-inline-block">
+				 <button type="submit" name="provider" value="Google" class="google-btn"> 
+				 	<i class="fa fa-google"></i> Sign in with Google 
+				 </button> 
+			</form>
+		</div>
+		<br />
+		<p> <a asp-action="ForgetPassword" asp-controller="Account"> Forget Password</a></p>
+	</div>
+</div>
+@section ValidationScriptSection
+{
+	<partial name="_ValidationScriptsPartial" />
+}
+
+
